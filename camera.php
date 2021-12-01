@@ -35,6 +35,22 @@
         if(array_key_exists('button8', $_POST)) {
             button8();
         }
+        if(array_key_exists('zoom', $_POST)) {
+            zoom();
+        }
+        if(array_key_exists('left', $_POST)) {
+            left();
+        }
+        if(array_key_exists('right', $_POST)) {
+            right();
+        }
+        if(array_key_exists('up', $_POST)) {
+            up();
+        }
+        if(array_key_exists('down', $_POST)) {
+            down();
+        }
+
 
 
 //scripts
@@ -62,6 +78,24 @@
 	function button8() {
             shell_exec("echo '\xff\x55\x07'>/dev/ttyUSB0");
         }
+        function zoom() {
+            shell_exec("echo '\xff\x55\x06'>/dev/ttyUSB0");
+        }
+        function left() {
+            shell_exec("echo '\xff\x55\x40'>/dev/ttyUSB0");
+        }
+        function right() {
+            shell_exec("echo '\xff\x55\x41'>/dev/ttyUSB0");
+        }
+        function up() {
+            shell_exec("echo '\xff\x55\x42'>/dev/ttyUSB0");
+        }
+        function down() {
+            shell_exec("echo '\xff\x55\x43'>/dev/ttyUSB0");
+        }
+
+
+
 
     ?>
 <!--Button actions and labels.-->
@@ -82,6 +116,19 @@
                 class="button" value="View" />
         <input type="submit" name="button8"
                 class="button" value="Sequence" />
+</p>
+        <input type="submit" name="zoom"
+                class="button" value="Zoom" />
+        <input type="submit" name="left"
+                class="button" value="LEFT" />
+        <input type="submit" name="right"
+                class="button" value="RIGHT" />
+        <input type="submit" name="up"
+                class="button" value="UP" />
+        <input type="submit" name="down"
+                class="button" value="DOWN" />
+
+
 
 
     </form>
