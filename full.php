@@ -74,6 +74,12 @@
         if(array_key_exists('search', $_POST)) {
             search();
         }
+        if(array_key_exists('play', $_POST)) {
+            play();
+        }
+        if(array_key_exists('freeze', $_POST)) {
+            freeze();
+        }
         if(array_key_exists('stop', $_POST)) {
             stop();
         }
@@ -147,9 +153,16 @@
     function search() {
             shell_exec("echo '\xff\x55\x6f'>/dev/ttyUSB0");
         }
-    function stop() {
+	function play() {
+            shell_exec("echo '\xff\x55\x02'>/dev/ttyUSB0");
+        }
+	function freeze() {
+            shell_exec("echo '\xff\x55\x05'>/dev/ttyUSB0");
+        }
+	function stop() {
             shell_exec("echo '\xff\x55\x03'>/dev/ttyUSB0");
         }
+
 
 
     ?>
@@ -200,8 +213,12 @@
                 class="button" value="enter" />
 		<input type="submit" name="search"
                 class="button" value="Search" />
+		<input type="submit" name="play"
+                class="button" value="Play" />
+		<input type="submit" name="freeze"
+                class="button" value="Freeze" />		
 		<input type="submit" name="stop"
-                class="button" value="stop" />
+                class="button" value="Stop" />
 
 -->
 
