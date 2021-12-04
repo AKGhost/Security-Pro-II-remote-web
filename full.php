@@ -47,7 +47,7 @@
         if(array_key_exists('view10', $_POST)) {
             view10();
         }
-        if(array_key_exists('sequennce', $_POST)) {
+        if(array_key_exists('sequence', $_POST)) {
             sequence();
         }
         if(array_key_exists('zoom', $_POST)) {
